@@ -1,0 +1,39 @@
+@import "./abstracts/variable";
+@import "./components/gradient";
+
+.hero-section {
+  width: 100%;
+  min-height: 580px;
+  background: url("../../img/hero-bg.png") center no-repeat;
+  background-size: cover;
+}
+
+.card-block {
+  &:hover {
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      background-color: $primary;
+      filter: blur(85px);
+    }
+    img {
+      transform: scale(1.2);
+      transition: all ease-in-out 0.3s;
+    }
+  }
+}
+
+.black-gradient {
+  background: $tertiary;
+  background: linear-gradient(
+    107deg,
+    rgba(#000000, 0.9) 35%,
+    rgba($tertiary, 0.9) 93%
+  );
+
+  background-size: 100% 100%;
+}

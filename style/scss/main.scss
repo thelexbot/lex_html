@@ -1,0 +1,30 @@
+@import "./abstracts/variableOverwrite";
+
+@import "./vendor/bootstrap-scss/bootstrap.scss";
+
+@import "./abstracts/variable";
+@import "./abstracts/mixins";
+@import "./abstracts/helper";
+@import "./base/normalize";
+@import "./base/typography";
+
+@import "./components/width", "./components/height";
+
+.navbar-collapse .navbar-nav {
+  @media only screen and (max-width: 992px) {
+    position: relative;
+    padding: 10px;
+    z-index: 9;
+    max-width: 150px;
+    &:before {
+      content: "";
+      background: rgba($white, 0.3);
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      z-index: -1;
+      backdrop-filter: saturate(100%) blur(8px);
+      box-shadow: 0 0 10px rgba(241, 111, 59, 0.1);
+    }
+  }
+}

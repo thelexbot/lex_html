@@ -1,0 +1,66 @@
+@import "../components/scrollBar.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  background: $white;
+  color: $senary;
+  -webkit-overflow-scrolling: touch;
+  font-family: -apple-system, BlinkMacSystemFont, "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  @media only screen and (min-width: 1440px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 1600px) {
+    font-size: 18px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: $senary;
+  line-height: 1.4;
+  font-family: -apple-system, "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full-page-spinner,
+.section-spinner {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.5);
+  @extend %flex-center;
+  i {
+    color: $secondary;
+  }
+}
+
+.section-spinner {
+  position: absolute;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+}

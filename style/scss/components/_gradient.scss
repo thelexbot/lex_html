@@ -1,0 +1,25 @@
+@import "../abstracts/variable";
+
+.gradient {
+  background: linear-gradient(0, rgba($primary, 0.2), rgba($secondary, 0.5));
+  background: rgb(13, 153, 255);
+  background: linear-gradient(
+    0deg,
+    rgba($primary, 0.2) 0%,
+    rgba($secondary, 0.8) 20%
+  );
+  background-size: 100% 100%;
+  // animation: gradientBG 5s ease infinite;
+  // backdrop-filter: saturate(100%) blur(8px);
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

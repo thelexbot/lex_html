@@ -1,0 +1,13 @@
+@import "./variable";
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "tertiary": $tertiary,
+  "transparent": $transparent,
+  "quaternary": $quaternary,
+  "quinary": $quinary,
+  "senary": $senary,
+  "light": $light,
+);
