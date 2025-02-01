@@ -14,7 +14,11 @@
     >
       <div class="container">
         <a class="navbar-brand" href="https://thelexbot.com/">
-          <img src="./img/lex.png" alt="TheLexBot" class="w-20" />
+          <img
+            src="https://storage.googleapis.com/lex_assets/lex.png"
+            alt="TheLexBot"
+            class="w-20"
+          />
         </a>
         <button
           class="navbar-toggler border-0"
@@ -44,13 +48,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto align-items-lg-center mt-2">
             <a
-              href="https://thelexbot.com/auth/login"
+              href="https://app.thelexbot.com/auth/login"
               target="_blank"
               class="btn btn-link rounded-2 px-2 py-2 ms-lg-2 w-28 text-decoration-none text-senary ms-auto"
               >Login</a
             >
             <a
-              href="https://thelexbot.com/auth/signup"
+              href="https://app.thelexbot.com/auth/signup"
               target="_blank"
               class="btn btn-primary rounded-2 px-2 py-2 ms-lg-2 w-28 text-decoration-none text-white ms-auto"
               >Sign Up</a
@@ -72,7 +76,7 @@
           of Indian Court Documents.
         </p>
         <a
-          href="https://thelexbot.com/auth/signup"
+          href="https://app.thelexbot.com/auth/signup"
           class="btn btn-primary p-2 mx-auto text-white px-4 fw-medium"
           target="_blank"
           >Get started for free</a
@@ -93,7 +97,7 @@
               class="img-frame overflow-hidden border border-2 rounded-3 shadow"
             >
               <img
-                src="./img/Landing-Result_Source_Side_Open_1.png"
+                src="https://storage.googleapis.com/lex_assets/Landing-Result_Source_Side_Open_1.png"
                 alt=""
                 class="w-100"
               />
@@ -134,7 +138,7 @@
               class="img-frame overflow-hidden border border-2 rounded-3 shadow"
             >
               <img
-                src="./img/Landing-Result_Source_Side_Open_1.png"
+                src="https://storage.googleapis.com/lex_assets/Landing-Result_Source_Side_Open_1.png"
                 alt=""
                 class="w-100"
               />
@@ -161,7 +165,10 @@
                   <div
                     class="card-block-icon bg-primary bg-opacity-25 border border-primary d-flex justify-content-center align-items-center w-16 h-16 rounded mx-auto mb-3"
                   >
-                    <img src="./img/apps-fill.svg" alt="" />
+                    <img
+                      src="https://storage.googleapis.com/lex_assets/apps-fill.svg"
+                      alt=""
+                    />
                   </div>
                   <h5 class="fs-5 text-center">
                     Streamline Your Research Process
@@ -178,7 +185,10 @@
                   <div
                     class="card-block-icon bg-primary bg-opacity-25 border border-primary d-flex justify-content-center align-items-center w-16 h-16 rounded mx-auto mb-3"
                   >
-                    <img src="./img/line.svg" alt="" />
+                    <img
+                      src="https://storage.googleapis.com/lex_assets/line.svg"
+                      alt=""
+                    />
                   </div>
                   <h5 class="fs-5 text-center">
                     Stay Ahead with Real-Time Legal Updates
@@ -191,7 +201,7 @@
           <div class="d-none d-lg-flex col-lg-4">
             <div class="w-100 overflow-hidden">
               <img
-                src="./img/97f42b0bba608f08c0036edaf9ba8891.jpg"
+                src="https://storage.googleapis.com/lex_assets/97f42b0bba608f08c0036edaf9ba8891.jpg"
                 class="w-100 rounded-3"
                 alt=""
               />
@@ -206,7 +216,10 @@
                   <div
                     class="card-block-icon bg-primary bg-opacity-25 border border-primary d-flex justify-content-center align-items-center w-16 h-16 rounded mx-auto mb-3"
                   >
-                    <img src="./img/verified-badge-fill.svg" alt="" />
+                    <img
+                      src="https://storage.googleapis.com/lex_assets/verified-badge-fill.svg"
+                      alt=""
+                    />
                   </div>
                   <h5 class="fs-5 text-center">
                     Strengthen Your Legal Arguments
@@ -223,7 +236,10 @@
                   <div
                     class="card-block-icon bg-primary bg-opacity-25 border border-primary d-flex justify-content-center align-items-center w-16 h-16 rounded mx-auto mb-3"
                   >
-                    <img src="./img/database-fill.svg" alt="" />
+                    <img
+                      src="https://storage.googleapis.com/lex_assets/database-fill.svg"
+                      alt=""
+                    />
                   </div>
                   <h5 class="fs-5 text-center">
                     Access an Unmatched Legal Database
@@ -290,7 +306,27 @@
               </p>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-5">
-              <form action="#" method="post">
+              <form
+                action="https://api.staticforms.xyz/submit"
+                method="post"
+                class="form-group"
+              >
+                <input
+                  type="hidden"
+                  name="accessKey"
+                  value="8a7f6305-0e2e-4ad5-b884-7b166f6dcaef"
+                />
+                <input
+                  type="hidden"
+                  name="replyTo"
+                  value="Vidharv@thelexbot.com"
+                />
+                <input
+                  type="hidden"
+                  name="redirectTo"
+                  value="https://thelexbot.com/thankyou.html"
+                />
+                <input type="hidden" name="replyTo" value="@" />
                 <div class="form-group mb-3">
                   <fieldset>
                     <label class="text-light mb-2" for="emailAddress"
@@ -320,8 +356,13 @@
                     >
                       <option value="" selected disabled>Choose</option>
 
+                      <option value="judge">Judge</option>
+                      <option value="professor">Professor</option>
+                      <option value="lawFirm">Law Firm</option>
+                      <option value="individualLawyer">
+                        Individual Lawyer
+                      </option>
                       <option value="student">Student</option>
-                      <option value="lawyer">Lawyer</option>
                     </select>
                   </fieldset>
                 </div>
@@ -352,7 +393,11 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-6 col-sm-3 col-md-2">
-            <img src="./img/lex-light.png" class="w-20" alt="" />
+            <img
+              src="https://storage.googleapis.com/lex_assets/lex-light.png"
+              class="w-20"
+              alt=""
+            />
           </div>
           <div class="col-6 col-sm-6 col-md-6">
             <ul class="list-unstyled d-flex justify-content-end">
@@ -377,22 +422,35 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-light btn small">
+                  <a
+                    href="https://www.instagram.com/lex_legalexp"
+                    class="text-light btn small"
+                    target="_blank"
+                  >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-light btn small"
-                    ><i class="fa-brands fa-google"></i
+                  <a
+                    href="https://www.reddit.com/r/thelex/"
+                    class="text-light btn small"
+                    target="_blank"
+                    ><i class="fa-brands fa-reddit"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="#" class="text-light btn small"
+                  <a
+                    href=" https://www.linkedin.com/company/lexlegalexp"
+                    class="text-light btn small"
+                    target="_blank"
                     ><i class="fa-brands fa-linkedin"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="#" class="text-light btn small"
+                  <a
+                    href="https://x.com/Lex_legalexp"
+                    class="text-light btn small"
+                    target="_blank"
                     ><i class="fa-brands fa-x-twitter"></i
                   ></a>
                 </li>
