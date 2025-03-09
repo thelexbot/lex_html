@@ -27,12 +27,13 @@ body {
   text-align: center;
   overflow: hidden;
   height: 100vh;
+  font-family: "Montserrat", sans-serif;
   background: linear-gradient(
     45deg,
-    rgba($primary, 0.6),
-    rgba($secondary, 0.6),
-    rgba($tertiary, 0.6),
-    rgba($quinary, 0.6)
+    rgba($senary, 0.6),
+    rgba($light, 0.6),
+    rgba($senary, 0.6),
+    rgba($light, 0.6)
   );
   background-size: 400% 400%;
   animation: gradientBG 5s ease infinite;
@@ -81,13 +82,7 @@ img {
   max-width: 220px;
 }
 .gradient-text {
-  background: linear-gradient(90deg, $primary, $secondary, $tertiary, $quinary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-stroke: 1% $quinary;
-  text-stroke: 1% $quinary;
+  color: $senary;
 }
 .footer {
   position: absolute;

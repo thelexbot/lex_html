@@ -276,23 +276,24 @@
         </div>
       </div>
     </section>
-    <section class="py-5 bg-primary bg-opacity-25">
-      <div class="container text-center">
-        <h1 class="fw-bold display-6 col-sm-12 col-md-11 col-lg-10 mx-auto">
-          Meet Lex <br />
-          AI - Powered Legal Expert
-        </h1>
-        <p class="col-sm-12 col-md-10 col-lg-8 mx-auto mb-4 fs-5">
-          Save time, boost efficiency, and enhance accuracy with LEX—your
-          AI-powered partner for smarter, faster, and more precise legal
-          research.
-        </p>
-        <a
-          href="https://app.thelexbot.com/auth/signup"
-          class="btn btn-primary p-2 mx-auto text-white px-4 fw-medium mt-4"
-          target="_blank"
-          >Get started for free</a
-        >
+    <section class="py-4 bg-secondary">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-10 col-sm-10 col-md-8">
+            <h3 class="m-0">Emergency brief due?</h3>
+            <p class="m-0 fs-6">
+              Don't let your client down, deliver it 10x faster!
+            </p>
+          </div>
+          <div class="col-10 col-sm-10 col-md-3 text-center">
+            <a
+              href="https://app.thelexbot.com/auth/signup"
+              class="btn btn-primary py-2 mx-auto text-white px-4 w-100 fw-medium my-2 fw-bold"
+              target="_blank"
+              >SIGN UP FOR FREE</a
+            >
+          </div>
+        </div>
       </div>
     </section>
     <section class="py-5">
@@ -376,6 +377,22 @@
                 <input type="hidden" name="replyTo" value="@" />
                 <div class="form-group mb-3">
                   <fieldset>
+                    <label class="text-light mb-2" for="phone">Mobile</label>
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      class="form-control"
+                      placeholder="Mobile "
+                      max="16"
+                      maxlength="16"
+                      autocomplete="false"
+                      required
+                    />
+                  </fieldset>
+                </div>
+                <div class="form-group mb-3">
+                  <fieldset>
                     <label class="text-light mb-2" for="emailAddress"
                       >Email Address</label
                     >
@@ -392,7 +409,7 @@
                     />
                   </fieldset>
                 </div>
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                   <fieldset>
                     <label class="text-light mb-2" for="occupation"
                       >Occupation</label
@@ -414,7 +431,7 @@
                       <option value="OTHER">Other</option>
                     </select>
                   </fieldset>
-                </div>
+                </div> -->
                 <div class="form-group mb-3">
                   <fieldset>
                     <label class="text-light mb-2" for="message">Message</label>
