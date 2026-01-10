@@ -56,7 +56,7 @@ export default function HeroClient() {
           className="w-full flex justify-center mb-6 md:mb-10 md:-translate-y-40"
         >
           <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-center leading-tight">
-            <span className="text-foreground">Research</span>{" "}
+            <span className="text-foreground">Legal</span>{" "}
             <motion.span
               className="
                 bg-[linear-gradient(to_right,#3b28cc,#2563eb,#0d99ff,#3b28cc)]
@@ -71,7 +71,7 @@ export default function HeroClient() {
                 repeat: Infinity,
               }}
             >
-              Anything
+              Intelligence
             </motion.span>
           </h1>
         </FadeUp>

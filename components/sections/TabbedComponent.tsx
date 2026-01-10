@@ -27,6 +27,21 @@ const tabData = [
     ],
   },
   {
+    id: "associate-lawyers",
+    label: "Associate Lawyers",
+    icon: Scale,
+    title: "Associate Lawyers",
+    subtitle: "Efficient Legal Research",
+    description:
+      "Summarize documents, research cases, and draft legal memorandums efficiently.",
+    tasks: [
+      "Conduct case research",
+      "Summarize documents",
+      "Draft legal memos",
+      "Prepare case briefs",
+    ],
+  },
+  {
     id: "senior-lawyers",
     label: "Senior Lawyers",
     icon: Briefcase,
@@ -41,21 +56,7 @@ const tabData = [
       "Draft compelling briefs",
     ],
   },
-  {
-    id: "junior-lawyers",
-    label: "Junior Lawyers",
-    icon: Scale,
-    title: "Junior Lawyers",
-    subtitle: "Efficient Legal Research",
-    description:
-      "Summarize documents, research cases, and draft legal memorandums efficiently.",
-    tasks: [
-      "Conduct case research",
-      "Summarize documents",
-      "Draft legal memos",
-      "Prepare case briefs",
-    ],
-  },
+
   {
     id: "judges",
     label: "Judges",
@@ -216,12 +217,12 @@ export default function TabbedComponent() {
     text-sm font-medium
     text-secondary-foreground
     transition
-    hover:bg-muted
+    hover:bg-muted cursor-pointer
   "
               >
                 {isActive && (
                   <motion.div
-                    className="absolute inset-y-0 left-0 bg-primary"
+                    className="absolute inset-y-0 left-0 bg-foreground"
                     initial={{ width: "0%" }}
                     animate={{ width: `${progress}%` }}
                     transition={{ ease: "linear" }}
@@ -261,13 +262,18 @@ export default function TabbedComponent() {
                       ease: [0.4, 0, 0.2, 1],
                     }}
                   >
-                    <div className="mx-auto max-w-5xl rounded-3xl border border-foreground/10 border-b-0 shadow-xl dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
+                    <div
+                      className="mx-auto max-w-5xl rounded-3xl border border-foreground/10 border-b-0 shadow-xl dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-[linear-gradient(90deg,#f5f5f5_0%,#f0f2f5_45%,#e5e7eb_60%,#d1d5db_75%,#c7cbd1_100%)] dark:bg-[linear-gradient(90deg,#0a0a0a_0%,#0f172a_45%,#111827_60%,#182134_75%,#1f2937_100%)] before:absolute before:inset-0 before:bg-[radial-gradient(80%_100%_at_100%_50%,rgba(255,255,255,0.08),transparent)] dark:before:bg-[radial-gradient(80%_100%_at_100%_50%,rgba(255,255,255,0.06),transparent)]
+"
+                    >
                       <div className="grid lg:grid-cols-2 h-full">
-                        <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 bg-muted rounded-l-3xl">
-                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-secondary-foreground">
+                        <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl">
+                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-[#0a0a0a]">
                             <tab.icon className="h-7 w-7" />
                           </div>
-                          <h3 className="text-3xl font-bold">{tab.title}</h3>
+                          <h3 className="text-3xl font-bold text-[#0a0a0a]">
+                            {tab.title}
+                          </h3>
                           <p className="text-muted-foreground text-lg">
                             {tab.description}
                           </p>
@@ -277,7 +283,7 @@ export default function TabbedComponent() {
                           className="
     relative h-70 md:h-80
     flex items-center justify-center
-    rounded-r-3xl overflow-hidden bg-[linear-gradient(180deg,#f4f8ff_0%,#eef4ff_100%)] dark:bg-[linear-gradient(180deg,#0b1220_0%,#0a1833_100%)]
+    rounded-r-3xl overflow-hidden
   "
                         >
                           <AnimatePresence mode="wait">
@@ -288,7 +294,7 @@ export default function TabbedComponent() {
                               animate="animate"
                               exit="exit"
                               className="
-    flex items-center gap-4
+    flex items-center gap-4 min-w-[120px]
     border border-foreground/10
     bg-background
     px-5 py-4 rounded-xl
@@ -297,17 +303,17 @@ export default function TabbedComponent() {
                             >
                               <span
                                 className="
-        flex h-8 w-8 items-center justify-center
+        flex h-12 w-16 items-center justify-center
         rounded-full
-        bg-primary
-        text-primary-foreground
-        text-sm
+        bg-foreground
+        text-background
+        text-md font-semibold
       "
                               >
                                 {taskIndex + 1}
                               </span>
 
-                              <span className="font-medium text-foreground w-full">
+                              <span className="font-medium text-lg text-foreground w-full">
                                 {tab.tasks[taskIndex]}
                               </span>
                             </motion.div>

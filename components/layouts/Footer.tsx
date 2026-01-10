@@ -32,12 +32,12 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-6 py-14">
+      <div className="container mx-auto px-6 py-14 font-medium">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center gap-2 text-lg font-semibold">
               <Scale className="h-5 w-5 text-primary" />
-              <span>Paraplex.ai</span>
+              <span>Lexbot</span>
             </div>
             <p className="text-base text-muted-foreground max-w-xs">
               AI-powered legal research platform for modern legal professionals.
@@ -113,9 +113,9 @@ const Footer = () => {
 
         <motion.div
           variants={itemVariants}
-          className="text-center text-base text-muted-foreground"
+          className="text-center text-base text-muted-foreground font-medium"
         >
-          © 2025 Paraplex.ai. All rights reserved.
+          © 2026 Lexbot. All rights reserved.
         </motion.div>
       </div>
     </motion.footer>

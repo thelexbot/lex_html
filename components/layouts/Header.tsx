@@ -5,10 +5,18 @@ import { useState, useEffect } from "react";
 import { Scale, Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = [
+  { name: "Features", id: "features" },
+  { name: "Use cases", id: "use-cases" },
+  { name: "Testimonials", id: "testimonials" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const [hoveredNav, setHoveredNav] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -73,53 +81,72 @@ export default function Header() {
             <p className="p-0 -m-3"> araplex.ai</p>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm md:text-base font-medium text-secondary-foreground">
-            <button
-              onClick={() => scrollToId("features")}
-              className="hover:text-foreground transition"
-            >
-              Features
-            </button>
-            <button
-              onClick={() => scrollToId("use-cases")}
-              className="hover:text-foreground transition"
-            >
-              Use cases
-            </button>
-            <button
-              onClick={() => scrollToId("testimonials")}
-              className="hover:text-foreground transition"
-            >
-              Testimonials
-            </button>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToId(item.id)}
+                  onMouseEnter={() => setHoveredNav(item.id)}
+                  onMouseLeave={() => setHoveredNav(null)}
+                  className="relative px-2 py-2 text-sm font-medium transition-colors"
+                >
+                  <span
+                    className={`relative z-10 transition-colors duration-200 ${
+                      hoveredNav === item.id
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
 
-          <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="rounded-xl p-2 text-foreground hover:bg-muted transition"
-            >
-              {dark ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </button>
+                  {hoveredNav === item.id && (
+                    <motion.div
+                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-foreground"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      exit={{ scaleX: 0 }}
+                      style={{ originX: 0.5 }}
+                      transition={{
+                        duration: 0.4,
+                        ease: "easeOut",
+                      }}
+                    />
+                  )}
+                </button>
+              ))}
+            </nav>
 
-            <a
-              href="https://app.thelexbot.com/login"
-              className="rounded-xl text-sm md:text-base font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted"
-            >
-              Log in
-            </a>
+            <div className="hidden md:block h-6 w-px bg-border" />
 
-            <Button
-              className="text-sm md:text-base"
-              href="https://app.thelexbot.com"
-            >
-              Get Started
-            </Button>
+            <div className="hidden md:flex items-center gap-3">
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle theme"
+                className="rounded-xl p-2 text-foreground hover:bg-muted transition"
+              >
+                {dark ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </button>
+
+              <a
+                href="https://app.thelexbot.com/auth/login"
+                className="rounded-xl text-sm md:text-base font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted"
+              >
+                Log in
+              </a>
+
+              <Button
+                className="text-sm md:text-base"
+                href="https://app.thelexbot.com"
+              >
+                Free Access ⭐
+              </Button>
+            </div>
           </div>
 
           <button
@@ -132,68 +159,49 @@ export default function Header() {
         </div>
       </div>
 
-      {open && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="md:hidden border-t border-foreground/20 bg-background"
-        >
-          <div className="px-6 py-6 flex flex-col gap-4 text-lg font-semibold">
-            <button
-              onClick={() => {
-                scrollToId("features");
-                setOpen(false);
-              }}
-              className="text-left"
-            >
-              Features
-            </button>
-            <button
-              onClick={() => {
-                scrollToId("use-cases");
-                setOpen(false);
-              }}
-              className="text-left"
-            >
-              Use cases
-            </button>
-            <button
-              onClick={() => {
-                scrollToId("testimonials");
-                setOpen(false);
-              }}
-              className="text-left"
-            >
-              Testimonials
-            </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-foreground/10 bg-background overflow-hidden"
+          >
+            <div className="px-6 py-6 flex flex-col gap-4 text-lg font-semibold">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    scrollToId(item.id);
+                    setOpen(false);
+                  }}
+                  className="text-left py-2 hover:text-primary transition-colors"
+                >
+                  {item.name}
+                </button>
+              ))}
 
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-foreground hover:bg-muted transition"
-            >
-              {dark ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-              {dark ? "Light mode" : "Dark mode"}
-            </button>
+              <hr className="border-foreground/10 my-2" />
 
-            <div className="pt-4 flex flex-col gap-3">
-              <a
-                href="https://app.thelexbot.com/login"
-                className="rounded-xl text-md font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted"
-              >
-                Log in
-              </a>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://app.thelexbot.com/login"
+                  className="rounded-xl text-md font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted text-center border border-foreground/10"
+                >
+                  Log in
+                </a>
 
-              <Button href="https://app.thelexbot.com/auth/signup">
-                Get Started
-              </Button>
+                <Button
+                  href="https://app.thelexbot.com/auth/signup"
+                  className="w-full justify-center text-center"
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

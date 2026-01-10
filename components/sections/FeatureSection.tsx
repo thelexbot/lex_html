@@ -11,6 +11,7 @@ interface FeatureSectionProps {
   mediaSrc: string;
   mediaType?: "video" | "image" | "youtube";
   alignRight?: boolean;
+  italicizeLastLine?: boolean;
 }
 
 export default function FeatureSection({
@@ -21,6 +22,7 @@ export default function FeatureSection({
   mediaType = "image",
   mediaSrc,
   alignRight = false,
+  italicizeLastLine = false,
 }: FeatureSectionProps) {
   return (
     <section
@@ -42,7 +44,7 @@ export default function FeatureSection({
               alignRight ? "lg:order-last" : ""
             }`}
           >
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground shadow-sm">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary-foreground text-secondary shadow-sm">
               <Icon className="h-6 w-6 md:h-7 md:w-7" />
             </div>
 
@@ -61,8 +63,21 @@ export default function FeatureSection({
               )}
 
               {description && (
-                <p className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
-                  {description}
+                <p className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground whitespace-pre-line">
+                  {italicizeLastLine
+                    ? description.split("\n\n").map((block, index, arr) => {
+                        const isLast = index === arr.length - 1;
+
+                        return (
+                          <span
+                            key={index}
+                            className={isLast ? "italic block mt-3" : "block"}
+                          >
+                            {block}
+                          </span>
+                        );
+                      })
+                    : description}
                 </p>
               )}
             </header>

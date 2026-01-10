@@ -129,10 +129,10 @@ const Reviews = () => {
                   shrink-0
                   w-80 md:w-90
                   flex flex-col justify-between
-                  h:95 h-120
+                  h:95 h-100
                   min-h-105
                   p-8 md:p-10
-                  bg-secondary/50
+                  bg-foreground/5
                   rounded-xl
                   hover:bg-secondary
                   transition-colors duration-300

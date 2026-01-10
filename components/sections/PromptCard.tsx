@@ -38,7 +38,7 @@ export default function PromptCard({ text }: PromptCardProps) {
   return (
     <div className="w-full">
       <div
-        className="bg-background rounded-[2.25rem] p-4 md:p-6 shadow-2xl border border-foreground/10
+        className="bg-background/80 rounded-[2.25rem] p-4 md:p-6 shadow-2xl border border-foreground/10
  w-full"
       >
         <div className="flex items-center gap-3">
@@ -61,12 +61,22 @@ export default function PromptCard({ text }: PromptCardProps) {
           </div>
 
           <motion.button
-            className="relative h-10 md:h-11 w-10 md:w-11 bg-primary hover:opacity-90 rounded-lg flex items-center justify-center overflow-hidden shrink-0"
-            animate={isTypingComplete ? { scale: [1, 1.05, 1] } : { scale: 1 }}
+            className="relative h-11 w-11 md:h-12 md:w-12 rounded-xl 
+             bg-primary text-primary-foreground 
+             flex items-center justify-center 
+             overflow-hidden shrink-0"
+            animate={
+              isTypingComplete
+                ? {
+                    scale: [1, 1.12, 1],
+                    y: [0, -2, 0],
+                  }
+                : { scale: 1, y: 0 }
+            }
             transition={
               isTypingComplete
                 ? {
-                    duration: 1.2,
+                    duration: 1.1,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }
@@ -75,22 +85,35 @@ export default function PromptCard({ text }: PromptCardProps) {
           >
             {isTypingComplete && (
               <motion.span
-                initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
+                className="absolute inset-0 rounded-xl ring-2 ring-primary/10"
+                animate={{ opacity: [0.3, 0.8, 0.3] }}
                 transition={{
-                  duration: 1.2,
+                  duration: 1.0,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
+              />
+            )}
+
+            {isTypingComplete && (
+              <motion.span
+                className="absolute inset-0 bg-linear-to-r 
+                 from-transparent via-white/40 to-transparent"
+                initial={{ x: "-120%" }}
+                animate={{ x: "120%" }}
+                transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             )}
 
             <ArrowRight
-              className="relative z-10 w-5 md:w-6 h-5 md:h-6 text-primary-foreground"
+              className="relative z-10 w-6 h-6"
               onClick={(e) => {
                 e.stopPropagation();
-                router.push("https://app.thelexbot.com");
+                router.push("https://app.thelexbot.com/auth/signup");
               }}
             />
           </motion.button>
@@ -106,7 +129,7 @@ export default function PromptCard({ text }: PromptCardProps) {
           className="text-center mt-3"
         >
           <p className="text-xs md:text-sm font-medium text-muted-foreground">
-            Press Enter or click to start researching →
+            Click to start your research →
           </p>
         </motion.div>
       </div>
