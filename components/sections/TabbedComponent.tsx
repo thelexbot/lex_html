@@ -263,15 +263,17 @@ export default function TabbedComponent() {
                     }}
                   >
                     <div
-                      className="mx-auto max-w-5xl rounded-3xl border border-foreground/10 border-b-0 shadow-xl dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-[linear-gradient(90deg,#f5f5f5_0%,#f0f2f5_45%,#e5e7eb_60%,#d1d5db_75%,#c7cbd1_100%)] dark:bg-[linear-gradient(90deg,#0a0a0a_0%,#0f172a_45%,#111827_60%,#182134_75%,#1f2937_100%)] before:absolute before:inset-0 before:bg-[radial-gradient(80%_100%_at_100%_50%,rgba(255,255,255,0.08),transparent)] dark:before:bg-[radial-gradient(80%_100%_at_100%_50%,rgba(255,255,255,0.06),transparent)]
+                      className="mx-auto max-w-5xl rounded-3xl border border-foreground/10 border-b-0 shadow-xl dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] bg-usecase-gradient before:absolute before:inset-0 before:z-0
+  before:bg-usecase-glow
+
 "
                     >
                       <div className="grid lg:grid-cols-2 h-full">
                         <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl">
-                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-[#0a0a0a]">
+                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-foreground">
                             <tab.icon className="h-7 w-7" />
                           </div>
-                          <h3 className="text-3xl font-bold text-[#0a0a0a]">
+                          <h3 className="text-3xl font-bold text-foreground">
                             {tab.title}
                           </h3>
                           <p className="text-muted-foreground text-lg">
