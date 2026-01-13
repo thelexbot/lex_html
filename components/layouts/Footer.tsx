@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { Scale } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
 const footerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -22,7 +23,38 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const items = ["Features", "Use Cases", "Pricing"] as const;
+
 const Footer = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = (item: (typeof items)[number]) => {
+    if (item === "Pricing") {
+      router.push("/pricing");
+      return;
+    }
+
+    if (item === "Features") {
+      if (pathname === "/") {
+        const el = document.getElementById("features");
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push("/#features");
+      }
+      return;
+    }
+
+    if (item === "Use Cases") {
+      if (pathname === "/") {
+        const el = document.getElementById("use-cases");
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push("/#use-cases");
+      }
+    }
+  };
+
   return (
     <motion.footer
       aria-label="Site footer"
@@ -47,7 +79,7 @@ const Footer = () => {
           <motion.div variants={itemVariants}>
             <h4 className="mb-4 text-base font-semibold">Product</h4>
             <ul className="space-y-2 text-base">
-              {["Features", "Use Cases", "Pricing"].map((item) => (
+              {items?.map((item) => (
                 <li key={item}>
                   <motion.button
                     type="button"
@@ -59,8 +91,8 @@ const Footer = () => {
   focus-visible:ring-2
   focus-visible:ring-primary/50
   focus-visible:ring-offset-2
-  transition-colors"
-                    onClick={() => {}}
+  transition-colors cursor-pointer"
+                    onClick={() => handleClick(item)}
                   >
                     {item}
                   </motion.button>
