@@ -1,6 +1,8 @@
 import Script from "next/script";
 import "./globals.css";
 import { DM_Sans } from "next/font/google";
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -91,7 +93,10 @@ export default function RootLayout({
         </noscript>
 
         {/* Page content */}
+
+        <Header />
         <div className="px-4 md:px-6 lg:px-10">{children}</div>
+        <Footer />
       </body>
     </html>
   );

@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Header />
-
       <main id="main-content">
         <Hero />
 
@@ -27,8 +25,6 @@ export default function Home() {
 
         <Reviews />
       </main>
-
-      <Footer />
     </>
   );
 }
