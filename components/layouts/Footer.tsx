@@ -33,7 +33,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const items = ["Features", "Use Cases", "Pricing"] as const;
+const items = ["Features", "Use Cases", "Testimonials", "Pricing"] as const;
 
 const socialLinks = [
   {
@@ -74,6 +74,15 @@ const Footer = () => {
         router.push("/#use-cases");
       }
     }
+
+    if (item === "Testimonials") {
+      if (pathname === "/") {
+        const el = document.getElementById("testimonials");
+        el?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push("/#testimonials");
+      }
+    }
   };
 
   const handleLegalClick = (item: string) => {
@@ -81,6 +90,15 @@ const Footer = () => {
       router.push("/privacy-policy");
     } else if (item === "Terms of Service") {
       router.push("/terms-of-service");
+    }
+  };
+
+  const handleCompanyClick = (item: string) => {
+    if (item === "Contact") {
+      window.open(
+        "https://wa.me/917982092862?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
+        "_blank"
+      );
     }
   };
 
@@ -156,7 +174,7 @@ const Footer = () => {
                     type="button"
                     whileHover={{ x: 4 }}
                     className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => {}}
+                    onClick={() => handleCompanyClick(item)}
                   >
                     {item}
                   </motion.button>

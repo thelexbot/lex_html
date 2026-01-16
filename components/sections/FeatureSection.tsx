@@ -90,7 +90,7 @@ export default function FeatureSection({
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="w-full"
           >
-            <div className="relative aspect-16/10 overflow-hidden rounded-xl border border-foreground/10 bg-background/60 backdrop-blur-xl shadow-xl">
+            <div className="relative aspect-16/10 overflow-hidden rounded-sm backdrop-blur-xl shadow-xs">
               {mediaType === "youtube" ? (
                 <iframe
                   className="absolute inset-0 h-full w-full"
@@ -108,7 +108,6 @@ export default function FeatureSection({
                   muted
                   loop
                   playsInline
-                  controls
                 >
                   <source src={mediaSrc} type="video/mp4" />
                 </video>

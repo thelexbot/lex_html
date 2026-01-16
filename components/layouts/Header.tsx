@@ -11,6 +11,7 @@ const navItems = [
   { name: "Features", id: "features" },
   { name: "Use cases", id: "use-cases" },
   { name: "Testimonials", id: "testimonials" },
+  { name: "Pricing", id: "pricing" },
 ];
 
 export default function Header() {
@@ -82,14 +83,20 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-6">
-            <nav className="hidden md:flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-3">
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToId(item.id)}
+                  onClick={() => {
+                    if (item.id === "pricing") {
+                      window.location.href = "/pricing";
+                    } else {
+                      scrollToId(item.id);
+                    }
+                  }}
                   onMouseEnter={() => setHoveredNav(item.id)}
                   onMouseLeave={() => setHoveredNav(null)}
-                  className="relative px-2 py-2 text-sm font-medium transition-colors"
+                  className="relative px-2 py-2 text-sm font-medium transition-colors cursor-pointer"
                 >
                   <span
                     className={`relative z-10 transition-colors duration-200 ${
@@ -103,7 +110,7 @@ export default function Header() {
 
                   {hoveredNav === item.id && (
                     <motion.div
-                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-foreground"
+                      className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       exit={{ scaleX: 0 }}
@@ -124,7 +131,7 @@ export default function Header() {
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
-                className="rounded-xl p-2 text-foreground hover:bg-muted transition"
+                className="rounded-xl p-2 text-foreground hover:bg-muted transition cursor-pointer"
               >
                 {dark ? (
                   <Sun className="h-4 w-4" />

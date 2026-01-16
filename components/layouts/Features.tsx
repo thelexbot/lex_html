@@ -16,13 +16,13 @@ export default function Features() {
     >
       <FeatureSection
         icon={TextSearch}
-        title="Don’t just download. Talk to the judgment"
-        subtitle="Turn judgments into living research material"
+        title="Ask anything, anyway"
+        subtitle="Semantic legal search — not keyword hunting"
         description={`Search the law the way you think, not the way databases expect. Start with a broad constitutional issue, narrow it down to a specific doctrine, challenge assumptions, or ask follow-ups - all within the same research thread
 
 "Paraplex understands meaning, context and intent."`}
-        mediaType="image"
-        mediaSrc="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ0ZmZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif"
+        mediaType="video"
+        mediaSrc="/bookmark.mp4"
         // alignRight
         italicizeLastLine
       />
