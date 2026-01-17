@@ -21,8 +21,8 @@ export default function Features() {
         description={`Search the law the way you think, not the way databases expect. Start with a broad constitutional issue, narrow it down to a specific doctrine, challenge assumptions, or ask follow-ups - all within the same research thread
 
 "Paraplex understands meaning, context and intent."`}
-        mediaType="video"
-        mediaSrc="/bookmark.mp4"
+        mediaType="image"
+        mediaSrc="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ0ZmZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif"
         // alignRight
         italicizeLastLine
       />
@@ -48,8 +48,8 @@ Get structured summaries, understand judicial reasoning, trace how principles ar
         description={`Bookmark exactly what matters — a paragraph, a line of reasoning, a dissent, or an Insight. Your bookmarks evolve into a structured research trail you can return to anytime.
 
 "No more re-searching the same judgment. No more lost arguments."`}
-        mediaType="youtube"
-        mediaSrc="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        mediaType="video"
+        mediaSrc="/bookmark.mp4"
         italicizeLastLine
       />
 
@@ -61,8 +61,8 @@ Get structured summaries, understand judicial reasoning, trace how principles ar
 This keeps Paraplex aligned with real legal thinking — not generic outputs.
 
 "Research improves as you use it."`}
-        mediaType="image"
-        mediaSrc="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ0ZmZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif"
+        mediaType="video"
+        mediaSrc="/feedback.mp4"
         // alignRight
         italicizeLastLine
       />

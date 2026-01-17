@@ -90,34 +90,40 @@ export default function FeatureSection({
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="w-full"
           >
-            <div className="relative aspect-16/10 overflow-hidden rounded-sm backdrop-blur-xl shadow-xs">
+            <div className="relative aspect-16/10 w-full">
               {mediaType === "youtube" ? (
-                <iframe
-                  className="absolute inset-0 h-full w-full"
-                  src={mediaSrc}
-                  title={title}
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <div className="absolute inset-0 overflow-hidden rounded-sm bg-muted/20 shadow-xs backdrop-blur-xl">
+                  <iframe
+                    className="h-full w-full"
+                    src={mediaSrc}
+                    title={title}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               ) : mediaType === "video" ? (
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src={mediaSrc} type="video/mp4" />
-                </video>
+                <div className="absolute inset-0 overflow-hidden flex items-center justify-center">
+                  <video
+                    className="h-[90%] w-[90%] object-cover rounded-sm shadow-sm"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    <source src={mediaSrc} type="video/mp4" />
+                  </video>
+                </div>
               ) : (
-                <img
-                  src={mediaSrc}
-                  alt={`${title} illustration`}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
+                <div className="absolute inset-0 overflow-hidden rounded-sm shadow-xs">
+                  <img
+                    src={mediaSrc}
+                    alt={`${title} illustration`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
               )}
             </div>
           </motion.div>
