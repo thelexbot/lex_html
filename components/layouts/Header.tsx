@@ -22,7 +22,7 @@ export default function Header() {
   useEffect(() => {
     const stored = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     if (stored === "dark" || (!stored && prefersDark)) {
@@ -149,7 +149,7 @@ export default function Header() {
 
               <Button
                 className="text-sm md:text-base"
-                href="https://app.thelexbot.com"
+                href="https://app.thelexbot.com/auth/signup"
               >
                 Free Access ⭐
               </Button>

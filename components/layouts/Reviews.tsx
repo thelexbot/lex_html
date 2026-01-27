@@ -84,13 +84,14 @@ const Reviews = () => {
   return (
     <section
       id="testimonials"
-      className="py-8 md:py-16 overflow-hidden bg-background"
+      className="relative py-8 md:py-16 overflow-hidden bg-background"
     >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-      />
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/0 to-transparent pointer-events-none" />
+
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-primary/12 rounded-full blur-[120px] pointer-events-none opacity-50" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none opacity-50" />
+
+      <div className="container relative mx-auto px-4 md:px-6 z-20">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
             What People Are Saying
@@ -102,24 +103,15 @@ const Reviews = () => {
         </div>
 
         <div className="relative overflow-hidden w-full">
-          <div
-            className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-background to-transparent z-10 pointer-events-none"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-background to-transparent z-10 pointer-events-none"
-            aria-hidden="true"
-          />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-background to-transparent z-30 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-background to-transparent z-30 pointer-events-none" />
 
           <div
-            className="flex gap-6 w-max"
+            className="flex gap-8 py-4"
             role="list"
-            aria-label="Customer testimonials"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{
-              animation: "scroll 80s linear infinite",
-            }}
+            style={{ animation: "scroll 30s linear infinite" }}
           >
             {duplicatedReviews.map((review, index) => (
               <div
@@ -127,34 +119,51 @@ const Reviews = () => {
                 key={`${review.id}-${index}`}
                 className="
                   shrink-0
-                  w-80 md:w-90
+                  w-85 md:w-90
                   flex flex-col justify-between
-                  h:95 h-100
-                  min-h-105
-                  p-8 md:p-10
-                  bg-foreground/5
-                  rounded-xl
-                  hover:bg-secondary
-                  transition-colors duration-300
-                  shadow-sm dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]
+                  min-h-[450px]
+                  p-8 md:p-10   
+                  rounded-[1.2rem]
+    transition-all duration-500
+    group
+    relative           
+              bg-[rgba(255,255,255,0.18)]
+backdrop-blur-2xl
+backdrop-saturate-110
+
+border border-white/20
+shadow-[0_8px_24px_rgba(0,0,0,0.08)]
+
+before:absolute
+before:inset-0
+before:rounded-[1.2rem]
+before:border
+before:border-white/30
+before:pointer-events-none
+
+hover:-translate-y-2
+hover:bg-[rgba(255,255,255,0.22)]
+
+dark:bg-[rgba(255,255,255,0.06)]
+dark:border-white/10
+dark:before:border-white/10
+dark:shadow-[0_8px_24px_rgba(0,0,0,0.5)]
+
                 "
               >
-                <blockquote className="text-lg md:text-xl font-medium leading-snug text-muted-foreground tracking-wide">
+                <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-foreground/80 italic">
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
 
-                <div className="flex items-center gap-4 mt-8 pt-6">
-                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-background shadow-sm border border-border/50">
-                    <span className="text-lg font-bold text-primary">
-                      {review.author.trim().charAt(0).toUpperCase()}
-                    </span>
+                <div className="flex items-center gap-4 mt-8 pt-6 border-t border-foreground/5">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary border border-primary/20 font-bold">
+                    {review.author.charAt(0)}
                   </div>
-
                   <div className="flex flex-col">
-                    <span className="font-semibold text-foreground">
+                    <span className="font-bold text-foreground text-base">
                       {review.author}
                     </span>
-                    <span className="text-sm text-muted-foreground line-clamp-1">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground font-medium">
                       {review.title}
                     </span>
                   </div>

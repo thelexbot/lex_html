@@ -1,11 +1,14 @@
 "use client";
 
-import React from "react";
-import { motion, type Variants } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
+  Copyright,
   Facebook,
   Instagram,
   Linkedin,
+  Lock,
+  Mail,
   RedoDotIcon,
   Scale,
   Twitter,
@@ -46,9 +49,41 @@ const socialLinks = [
   { icon: X, href: "https://x.com/Lex_legalexp" },
 ];
 
+const legalLinks = [
+  {
+    icon: Mail,
+    label: "Message on WhatsApp",
+    isWhatsapp: true,
+  },
+  {
+    icon: Lock,
+    href: "/privacy-policy",
+    label: "Privacy Policy",
+  },
+  {
+    icon: Scale,
+    href: "/terms-of-service",
+    label: "Terms of Service",
+  },
+  {
+    icon: Copyright,
+    href: "#",
+    label: "Copyright",
+    isStatic: true,
+  },
+];
+
 const Footer = () => {
+  const [showCopyright, setShowCopyright] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (showCopyright) {
+      const timer = setTimeout(() => setShowCopyright(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showCopyright]);
 
   const handleProductClick = (item: (typeof items)[number]) => {
     if (item === "Pricing") {
@@ -97,7 +132,7 @@ const Footer = () => {
     if (item === "Contact") {
       window.open(
         "https://wa.me/917982092862?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
-        "_blank"
+        "_blank",
       );
     }
   };
@@ -121,23 +156,6 @@ const Footer = () => {
             <p className="text-base text-muted-foreground max-w-xs">
               AI-powered legal research platform for modern legal professionals.
             </p>
-            <div className="flex items-center gap-4 pt-2">
-              {socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <Link
-                    key={index}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors transform hover:scale-110 duration-200"
-                  >
-                    <Icon className="h-6 w-6 font-semibold" />
-                    <span className="sr-only">Social link</span>
-                  </Link>
-                );
-              })}
-            </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
@@ -211,9 +229,87 @@ const Footer = () => {
 
         <motion.div
           variants={itemVariants}
-          className="text-center text-base text-muted-foreground font-medium"
+          className="text-center text-base text-muted-foreground font-medium items-center justify-center flex"
         >
-          © 2026 Lexbot. All rights reserved.
+          <div className="flex items-center gap-4 pt-2">
+            {socialLinks.map((social, index) => {
+              const Icon = social.icon;
+              return (
+                <Link
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg transform hover:scale-110 duration-200"
+                >
+                  <Icon className="h-5 w-5 font-semibold" />
+                  <span className="sr-only">Social link</span>
+                </Link>
+              );
+            })}
+            <span className="mx-2 select-none">|</span>
+
+            {legalLinks.map((legal, index) => {
+              const Icon = legal.icon;
+
+              if (legal.isStatic) {
+                return (
+                  <div
+                    key={`legal-${index}`}
+                    className="flex items-center gap-3"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setShowCopyright(!showCopyright)}
+                      className={`transition-colors cursor-pointer p-2 rounded-md hover:bg-muted ${
+                        showCopyright
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                      aria-label={legal.label}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </button>
+
+                    <AnimatePresence>
+                      {showCopyright && (
+                        <motion.span
+                          initial={{ opacity: 0, x: -10, width: 0 }}
+                          animate={{ opacity: 1, x: 0, width: "auto" }}
+                          exit={{ opacity: 0, x: -10, width: 0 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          onClick={() => setShowCopyright(false)}
+                          className="overflow-hidden whitespace-nowrap text-sm font-semibold text-foreground cursor-pointer select-none"
+                        >
+                          2026 Lexbot. All rights reserved.
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <button
+                  key={`legal-${index}`}
+                  onClick={() => {
+                    if (legal.isWhatsapp) {
+                      window.open(
+                        "https://wa.me/917982092862?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
+                        "_blank",
+                      );
+                    } else {
+                      router.push(legal.href!);
+                    }
+                  }}
+                  className="text-muted-foreground hover:text-foreground transition-colors p-2 cursor-pointer hover:bg-muted rounded-md transform hover:scale-110 duration-200"
+                  aria-label={legal.label}
+                >
+                  <Icon className="h-5 w-5" />
+                </button>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </motion.footer>

@@ -270,13 +270,13 @@ export default function TabbedComponent() {
                     >
                       <div className="grid lg:grid-cols-2 h-full">
                         <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl">
-                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-foreground">
-                            <tab.icon className="h-7 w-7" />
+                          <div className="inline-flex h-16 w-16 bg-foreground items-center justify-center rounded-2xl text-background">
+                            <tab.icon className="h-7 w-7 md:h-9 md:w-9" />
                           </div>
-                          <h3 className="text-3xl font-bold text-foreground">
+                          <h3 className="text-3xl md:text-4xl font-bold text-foreground">
                             {tab.title}
                           </h3>
-                          <p className="text-muted-foreground text-lg">
+                          <p className="text-muted-foreground text-lg md:text-xl">
                             {tab.description}
                           </p>
                         </div>
