@@ -140,18 +140,18 @@ const Footer = () => {
   return (
     <motion.footer
       aria-label="Site footer"
-      className="border-t border-foreground/10 bg-background mt-20"
+      className="border-t border-foreground/10 bg-background"
       variants={footerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       <div className="container mx-auto px-6 py-14 font-medium">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+        {/* <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center gap-2 text-lg font-semibold">
               <Scale className="h-5 w-5 text-primary" />
-              <span>Lexbot</span>
+              <span>Paraplex</span>
             </div>
             <p className="text-base text-muted-foreground max-w-xs">
               AI-powered legal research platform for modern legal professionals.
@@ -220,12 +220,12 @@ const Footer = () => {
               ))}
             </ul>
           </motion.div>
-        </div>
+        </div> */}
 
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="my-10 border-t border-foreground/10"
-        />
+        /> */}
 
         <motion.div
           variants={itemVariants}
@@ -247,7 +247,9 @@ const Footer = () => {
                 </Link>
               );
             })}
-            <span className="mx-2 select-none">|</span>
+            <Link href="https://app.thelexbot.com/auth/signup" target="_blank">
+              <span className="mx-2 select-none">|</span>
+            </Link>
 
             {legalLinks.map((legal, index) => {
               const Icon = legal.icon;
@@ -281,7 +283,7 @@ const Footer = () => {
                           onClick={() => setShowCopyright(false)}
                           className="overflow-hidden whitespace-nowrap text-sm font-semibold text-foreground cursor-pointer select-none"
                         >
-                          2026 Lexbot. All rights reserved.
+                          2026 Paraplex. All rights reserved.
                         </motion.span>
                       )}
                     </AnimatePresence>

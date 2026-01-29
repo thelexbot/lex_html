@@ -39,8 +39,8 @@ export default function PrivacyPolicy() {
           <section className="privacy-section">
             <h3>Introduction</h3>
             <p>
-              This Privacy Policy describes how TheLexBot ("we," "us," or "our")
-              collects, uses, and discloses information when you use TheLexBot
+              This Privacy Policy describes how Paraplex ("we," "us," or "our")
+              collects, uses, and discloses information when you use Paraplex
               (the "Service"). We are committed to protecting your privacy and
               ensuring the security of your personal information. By using the
               Service, you consent to the practices described in this policy.
@@ -62,7 +62,7 @@ export default function PrivacyPolicy() {
                     address, and other contact information.
                   </li>
                   <li>
-                    When you interact with TheLexBot, we collect the queries and
+                    When you interact with Paraplex, we collect the queries and
                     prompts you submit.
                   </li>
                   <li>Any other information you voluntarily provide to us.</li>
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
                   </li>
                   <li>
                     To personalize your experience and improve the functionality
-                    of TheLexBot.
+                    of Paraplex.
                   </li>
                   <li>
                     To analyze usage patterns and trends to enhance the Service.
@@ -269,7 +269,7 @@ export default function PrivacyPolicy() {
               please contact us at:
             </p>
             <p>
-              <strong>TheLexBot </strong>
+              <strong>Paraplex </strong>
               <br />
               <strong> Mobile: </strong>
               <a href="tel:917982092862">+91-7982092862</a>

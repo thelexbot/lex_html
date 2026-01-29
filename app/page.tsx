@@ -10,7 +10,7 @@ import Footer from "@/components/layouts/Footer";
 export const metadata: Metadata = {
   title: "AI Powered Legal Research Platform for Lawyers",
   description:
-    "LexBot is an AI-powered legal research platform for lawyers and legal professionals. Search judgments, analyze case law, and draft legal documents faster with AI.",
+    "Paraplex is an AI-powered legal research platform for lawyers and legal professionals. Search judgments, analyze case law, and draft legal documents faster with AI.",
 };
 
 export default function Home() {

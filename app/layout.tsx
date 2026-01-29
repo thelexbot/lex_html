@@ -14,11 +14,11 @@ export const metadata = {
   metadataBase: new URL("https://thelexbot.com"),
 
   title: {
-    default: "LexBot – AI Powered Legal Research Assistant",
-    template: "%s | LexBot",
+    default: "Paraplex – AI Powered Legal Research Assistant",
+    template: "%s | Paraplex",
   },
   description:
-    "LexBot is an AI-powered legal research assistant helping lawyers, judges, and legal professionals find judgments, analyze case law, and draft legal documents faster and more accurately.",
+    "Paraplex is an AI-powered legal research assistant helping lawyers, judges, and legal professionals find judgments, analyze case law, and draft legal documents faster and more accurately.",
 
   alternates: {
     canonical: "https://thelexbot.com",
@@ -35,8 +35,8 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://thelexbot.com",
-    siteName: "LexBot",
-    title: "LexBot – AI Powered Legal Research Assistant",
+    siteName: "Paraplex",
+    title: "Paraplex – AI Powered Legal Research Assistant",
     description:
       "AI-powered legal intelligence platform for faster, smarter legal research and drafting.",
     images: [
@@ -44,14 +44,14 @@ export const metadata = {
         url: "https://thelexbot.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LexBot – AI Legal Research Assistant",
+        alt: "Paraplex – AI Legal Research Assistant",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "LexBot – AI Powered Legal Research Assistant",
+    title: "Paraplex – AI Powered Legal Research Assistant",
     description:
       "AI-powered legal research and drafting platform for modern legal professionals.",
     images: ["https://thelexbot.com/og-image.png"],

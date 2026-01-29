@@ -41,7 +41,7 @@ export default function TermsAndConditions() {
           <section className="terms-section">
             <h3>Acceptance of Terms</h3>
             <p>
-              By accessing and using TheLexBot (hereinafter referred to as "the
+              By accessing and using Paraplex (hereinafter referred to as "the
               Service"), you agree to be bound by these Terms and Conditions
               ("Terms"). If you do not agree with any part of these Terms, you
               must not use the Service.
@@ -51,7 +51,7 @@ export default function TermsAndConditions() {
           <section className="terms-section">
             <h3>Description of Service</h3>
             <p>
-              TheLexBot is an AI-powered legal research tool designed to assist
+              Paraplex is an AI-powered legal research tool designed to assist
               lawyers, judges, corporate professionals, students, law
               professionals, and aspirants in India. The Service utilizes
               OpenAI's AI technology to analyze and process a proprietary
@@ -68,7 +68,7 @@ export default function TermsAndConditions() {
             <h3>Disclaimer of Legal Advice</h3>
             <p>
               <strong>No Legal Advice:</strong> The information provided by
-              TheLexBot, derived from our proprietary dataset of Supreme Court
+              Paraplex, derived from our proprietary dataset of Supreme Court
               rulings, is not a substitute for professional legal advice. Users
               should consult with a qualified legal professional for advice
               tailored to their specific circumstances.
@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
             </p>
             <p>
               <strong>User Responsibility:</strong> Users are solely responsible
-              for their use of the information provided by TheLexBot.
+              for their use of the information provided by Paraplex.
             </p>
           </section>
 
@@ -108,7 +108,7 @@ export default function TermsAndConditions() {
             <p>
               <strong>No Guarantee of Accuracy:</strong> The Company does not
               guarantee the accuracy, completeness, or reliability of the
-              information provided by TheLexBot, even regarding Supreme Court
+              information provided by Paraplex, even regarding Supreme Court
               rulings within our dataset.
             </p>
             <p>
