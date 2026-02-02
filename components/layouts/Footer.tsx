@@ -146,7 +146,7 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="container mx-auto px-6 py-14 font-medium">
+      <div className="container mx-auto px-4 py-10 md:px-6 md:py-14 font-medium">
         {/* <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="flex items-center gap-2 text-lg font-semibold">
@@ -229,88 +229,91 @@ const Footer = () => {
 
         <motion.div
           variants={itemVariants}
-          className="text-center text-base text-muted-foreground font-medium items-center justify-center flex"
+          className="text-center text-base text-muted-foreground font-medium items-center justify-center flex flex-col space-y-8"
         >
-          <div className="flex items-center gap-4 pt-2">
-            {socialLinks.map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <Link
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg transform hover:scale-110 duration-200"
-                >
-                  <Icon className="h-5 w-5 font-semibold" />
-                  <span className="sr-only">Social link</span>
-                </Link>
-              );
-            })}
+          <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-6 md:gap-x-4">
+            <div className="flex items-center gap-1 md:gap-2">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <Link
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-all p-2.5 hover:bg-muted rounded-xl active:scale-95"
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="sr-only">Social link</span>
+                  </Link>
+                );
+              })}
+            </div>
             <Link href="https://app.thelexbot.com/auth/signup" target="_blank">
-              <span className="mx-2 select-none">|</span>
+              <span className="hidden sm:block mx-2 select-none">|</span>
             </Link>
 
-            {legalLinks.map((legal, index) => {
-              const Icon = legal.icon;
+            <div className="flex flex-wrap items-center justify-center gap-1 md:gap-2">
+              {legalLinks.map((legal, index) => {
+                const Icon = legal.icon;
 
-              if (legal.isStatic) {
+                if (legal.isStatic) {
+                  return (
+                    <div key={`legal-${index}`} className="flex items-center">
+                      <button
+                        type="button"
+                        onClick={() => setShowCopyright(!showCopyright)}
+                        className={`transition-colors p-2.5 rounded-xl hover:bg-muted ${
+                          showCopyright
+                            ? "text-primary bg-primary/5"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                        aria-label={legal.label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </button>
+
+                      <AnimatePresence mode="wait">
+                        {showCopyright && (
+                          <motion.span
+                            initial={{ opacity: 0, width: 0, marginLeft: 0 }}
+                            animate={{
+                              opacity: 1,
+                              width: "auto",
+                              marginLeft: 8,
+                            }}
+                            exit={{ opacity: 0, width: 0, marginLeft: 0 }}
+                            className="overflow-hidden whitespace-nowrap text-xs md:text-sm font-semibold text-foreground"
+                          >
+                            © 2026 Paraplex.
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
-                  <div
+                  <button
                     key={`legal-${index}`}
-                    className="flex items-center gap-3"
+                    onClick={() => {
+                      if (legal.isWhatsapp) {
+                        window.open(
+                          "https://wa.me/917982092862?text=Hi",
+                          "_blank",
+                        );
+                      } else {
+                        router.push(legal.href!);
+                      }
+                    }}
+                    className="text-muted-foreground hover:text-foreground transition-all p-2.5 hover:bg-muted rounded-xl active:scale-95"
+                    aria-label={legal.label}
                   >
-                    <button
-                      type="button"
-                      onClick={() => setShowCopyright(!showCopyright)}
-                      className={`transition-colors cursor-pointer p-2 rounded-md hover:bg-muted ${
-                        showCopyright
-                          ? "text-primary"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                      aria-label={legal.label}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </button>
-
-                    <AnimatePresence>
-                      {showCopyright && (
-                        <motion.span
-                          initial={{ opacity: 0, x: -10, width: 0 }}
-                          animate={{ opacity: 1, x: 0, width: "auto" }}
-                          exit={{ opacity: 0, x: -10, width: 0 }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                          onClick={() => setShowCopyright(false)}
-                          className="overflow-hidden whitespace-nowrap text-sm font-semibold text-foreground cursor-pointer select-none"
-                        >
-                          2026 Paraplex. All rights reserved.
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
-                  </div>
+                    <Icon className="h-5 w-5" />
+                  </button>
                 );
-              }
-
-              return (
-                <button
-                  key={`legal-${index}`}
-                  onClick={() => {
-                    if (legal.isWhatsapp) {
-                      window.open(
-                        "https://wa.me/917982092862?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
-                        "_blank",
-                      );
-                    } else {
-                      router.push(legal.href!);
-                    }
-                  }}
-                  className="text-muted-foreground hover:text-foreground transition-colors p-2 cursor-pointer hover:bg-muted rounded-md transform hover:scale-110 duration-200"
-                  aria-label={legal.label}
-                >
-                  <Icon className="h-5 w-5" />
-                </button>
-              );
-            })}
+              })}
+            </div>
           </div>
         </motion.div>
       </div>
