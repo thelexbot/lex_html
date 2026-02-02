@@ -213,7 +213,7 @@ export default function TabbedComponent() {
                 className="
     relative overflow-hidden rounded-xl
     border border-foreground/10
-    bg-secondary px-5 py-2.5
+    bg-secondary px-3 py-1.5 md:px-5 md:py-2.5
     text-sm font-medium
     text-secondary-foreground
     transition
@@ -268,7 +268,7 @@ export default function TabbedComponent() {
 
 "
                     >
-                      <div className="grid lg:grid-cols-2 h-full">
+                      <div className="grid lg:grid-cols-2 h-full pt-10 lg:pt-0 gap-8 lg:gap-0">
                         <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl">
                           <div className="inline-flex h-16 w-16 bg-foreground items-center justify-center rounded-2xl text-background">
                             <tab.icon className="h-7 w-7 md:h-9 md:w-9" />
@@ -285,7 +285,7 @@ export default function TabbedComponent() {
                           className="
     relative h-70 md:h-80
     flex items-center justify-center
-    rounded-r-3xl overflow-hidden
+    rounded-r-3xl overflow-hidden px-6 md:px-0
   "
                         >
                           <AnimatePresence mode="wait">
@@ -324,7 +324,7 @@ export default function TabbedComponent() {
                       </div>
                     </div>
                   </motion.div>
-                )
+                ),
             )}
           </AnimatePresence>
         </div>
