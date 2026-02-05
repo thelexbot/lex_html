@@ -26,7 +26,7 @@ export default function FeatureSection({
 }: FeatureSectionProps) {
   return (
     <section
-      className="relative w-full py-12 sm:py-16 lg:py-20 xl:py-24"
+      className="relative w-full py-12 lg:py-20 xl:py-24"
       aria-labelledby={title.replace(/\s+/g, "-").toLowerCase()}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

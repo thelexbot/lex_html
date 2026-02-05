@@ -36,14 +36,11 @@ export default function PromptCard({ text }: PromptCardProps) {
   }, [text]);
 
   return (
-    <div className="w-full">
-      <div
-        className="bg-background/80 rounded-[2.25rem] p-4 md:p-6 shadow-2xl border border-foreground/10
- w-full"
-      >
+    <div className="w-full h-full">
+      <div className="bg-background/80 rounded-[1.5rem] md:rounded-[2.25rem] p-2 md:p-6 shadow-2xl border border-foreground/10 w-full h-full">
         <div className="flex items-center gap-3">
-          <div className="flex-1 border border-secondary rounded-xl h-14 md:h-16 px-4 md:px-6 flex items-center bg-background overflow-hidden">
-            <span className="text-base md:text-xl font-medium tracking-tight text-foreground line-clamp-2">
+          <div className="flex-1 border border-secondary rounded-xl h-14 md:h-16 px-2 ml-2 md:px-6 flex items-center bg-background overflow-hidden">
+            <span className="text-[10px] md:text-xl font-medium tracking-tight text-foreground md:whitespace-normal md:line-clamp-2">
               {displayedText}
 
               {!isTypingComplete && (
@@ -126,9 +123,9 @@ export default function PromptCard({ text }: PromptCardProps) {
             y: hasEverCompleted ? 0 : 8,
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="text-center mt-3"
+          className="text-center mt-1 md:mt-3"
         >
-          <p className="text-xs md:text-sm font-medium text-muted-foreground">
+          <p className="text-[10px] md:text-sm font-medium text-muted-foreground">
             Click to start your research →
           </p>
         </motion.div>

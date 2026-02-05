@@ -92,11 +92,11 @@ const Reviews = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none opacity-50" />
 
       <div className="container relative mx-auto px-4 md:px-6 z-20">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+        <div className="text-center mb-6 md:mb-16 space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
             What People Are Saying
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-md md:text-lg text-muted-foreground">
             Trusted by legal professionals across India for its accuracy and
             efficiency.
           </p>
@@ -107,11 +107,13 @@ const Reviews = () => {
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-background to-transparent z-30 pointer-events-none" />
 
           <div
-            className="flex gap-8 py-4"
+            className="flex gap-8 py-4 [--scroll-duration:20s] md:[--scroll-duration:30s]"
             role="list"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            style={{ animation: "scroll 30s linear infinite" }}
+            style={{
+              animation: "scroll var(--scroll-duration) linear infinite",
+            }}
           >
             {duplicatedReviews.map((review, index) => (
               <div
@@ -119,16 +121,16 @@ const Reviews = () => {
                 key={`${review.id}-${index}`}
                 className="
                   shrink-0
-                  w-85 md:w-90
-                  flex flex-col justify-between
-                  min-h-[450px]
-                  p-8 md:p-10   
+                  w-75 md:w-90
+                  flex flex-col justify-between min-h-52
+                  md:min-h-[450px]
+                  p-6 md:p-10   
                   rounded-[1.2rem]
     transition-all duration-500
     group
     relative           
               bg-[rgba(255,255,255,0.18)]
-backdrop-blur-2xl
+md:backdrop-blur-2xl
 backdrop-saturate-110
 
 border border-white/20

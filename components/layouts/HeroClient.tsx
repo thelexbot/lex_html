@@ -1,4 +1,3 @@
-// components/layouts/HeroClient.tsx
 "use client";
 
 import { useState } from "react";
@@ -45,15 +44,15 @@ export default function HeroClient() {
   };
 
   return (
-    <>
-      <div className="relative w-full h-1/2 md:absolute md:inset-0 z-0 md:h-full">
+    <div className="relative w-full h-screen overflow-hidden">
+      <div className="w-full h-full absolute inset-0 z-0">
         <ImageScroller images={slides} onIndexChange={handleIndexChange} />
       </div>
 
-      <div className="relative z-10 w-full pointer-events-none px-4 md:mt-72 pb-12 md:pb-0">
+      <div className="absolute inset-0 z-10 w-full h-full pointer-events-none px-4 flex flex-col items-center justify-center">
         <FadeUp
           delay={0.1}
-          className="w-full flex justify-center mb-6 md:mb-10 md:-translate-y-40"
+          className="w-full flex justify-center mb-4 md:mb-10 translate-y-[-20vh] md:translate-y-[-13vh]"
         >
           <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-center leading-tight">
             <span className="text-foreground">Legal</span>{" "}
@@ -76,12 +75,15 @@ export default function HeroClient() {
           </h1>
         </FadeUp>
 
-        <FadeUp delay={0.2} className="w-full flex justify-center">
+        <FadeUp
+          delay={0.2}
+          className="w-full flex justify-center translate-y-[20vh] md:translate-y-[12vh]"
+        >
           <div className="pointer-events-auto w-full max-w-4xl">
             <PromptCard text={currentText} />
           </div>
         </FadeUp>
       </div>
-    </>
+    </div>
   );
 }

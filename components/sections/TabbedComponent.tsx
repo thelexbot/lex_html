@@ -180,9 +180,9 @@ export default function TabbedComponent() {
   }, [activeTab]);
 
   return (
-    <section id="use-cases" className="w-full py-16 md:py-24 bg-background">
+    <section id="use-cases" className="w-full py-8 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-12 space-y-4">
+        <div className="text-center mb-6 md:mb-12 space-y-2 md:space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             How Legal Professionals Use Paraplex
           </h2>
@@ -268,22 +268,22 @@ export default function TabbedComponent() {
 
 "
                     >
-                      <div className="grid lg:grid-cols-2 h-full pt-10 lg:pt-0 gap-8 lg:gap-0">
-                        <div className="h-full flex flex-col justify-center space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl">
-                          <div className="inline-flex h-16 w-16 bg-foreground items-center justify-center rounded-2xl text-background">
+                      <div className="grid lg:grid-cols-2 h-full pt-6 lg:pt-0 gap-8 lg:gap-0">
+                        <div className="h-full flex flex-col items-center md:items-start justify-center space-y-3 md:space-y-4 px-6 md:px-10 lg:px-14 rounded-l-3xl text-center md:text-left">
+                          <div className="inline-flex h-12 w-12 md:h-16 md:w-16 bg-foreground items-center justify-center rounded-2xl text-background">
                             <tab.icon className="h-7 w-7 md:h-9 md:w-9" />
                           </div>
-                          <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+                          <h3 className="text-2xl md:text-4xl font-bold text-foreground">
                             {tab.title}
                           </h3>
-                          <p className="text-muted-foreground text-lg md:text-xl">
+                          <p className="text-muted-foreground text-md md:text-xl">
                             {tab.description}
                           </p>
                         </div>
 
                         <div
                           className="
-    relative h-70 md:h-80
+    relative h-40 md:h-80
     flex items-center justify-center
     rounded-r-3xl overflow-hidden px-6 md:px-0
   "
@@ -296,10 +296,10 @@ export default function TabbedComponent() {
                               animate="animate"
                               exit="exit"
                               className="
-    flex items-center gap-4 min-w-[120px]
+    flex items-center gap-4 min-w-[80px] md:min-w-[120px]
     border border-foreground/10
     bg-background
-    px-5 py-4 rounded-xl
+    px-3 py-2.5 md:px-5 md:py-4 rounded-xl
     shadow-md
   "
                             >

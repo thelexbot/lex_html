@@ -71,8 +71,8 @@ export default function ImageScroller({
   };
 
   return (
-    <section className="relative w-full overflow-hidden py-4 md:py-16 px-4 bg-background min-h-100 md:min-h-160">
-      <div className="relative h-100 md:h-100 flex items-center overflow-visible mt-0 md:mt-36">
+    <section className="relative w-full h-full overflow-hidden py-4 md:py-16 px-4 bg-background min-h-100 md:min-h-160">
+      <div className="relative h-full md:h-100 flex items-center overflow-visible mt-20 md:mt-36">
         <motion.div
           className="flex gap-6 items-center"
           initial={false}
@@ -106,7 +106,7 @@ export default function ImageScroller({
                   alt={img.alt ?? ""}
                   width={220}
                   height={300}
-                  className="h-55 md:h-75 w-55 rounded-md object-cover shadow-2xl"
+                  className="h-75 md:h-75 w-55 rounded-md object-cover shadow-2xl"
                   draggable={false}
                   priority={idx === activeIndex}
                 />
