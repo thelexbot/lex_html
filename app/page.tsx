@@ -6,6 +6,7 @@ import Features from "@/components/layouts/Features";
 import TabbedComponent from "@/components/sections/TabbedComponent";
 import Reviews from "@/components/layouts/Reviews";
 import Footer from "@/components/layouts/Footer";
+import ContactFab from "./contactFab/contactFab";
 
 export const metadata: Metadata = {
   title: "AI Powered Legal Research Platform for Lawyers",
@@ -25,6 +26,7 @@ export default function Home() {
 
         <Reviews />
       </main>
+      <ContactFab />
     </>
   );
 }
