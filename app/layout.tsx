@@ -14,12 +14,11 @@ const dmSans = DM_Sans({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#ffffff",
 };
 
 export const metadata = {
   metadataBase: new URL("https://thelexbot.com"),
-
-  themeColor: "#ffffff",
 
   title: {
     default: "Paraplex – AI Powered Legal Research Assistant",
