@@ -3,6 +3,7 @@ import "./globals.css";
 import { DM_Sans } from "next/font/google";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import { Viewport } from "next";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -10,8 +11,15 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata = {
   metadataBase: new URL("https://thelexbot.com"),
+
+  themeColor: "#ffffff",
 
   title: {
     default: "Paraplex – AI Powered Legal Research Assistant",
@@ -64,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body className={dmSans.className}>
         {/* Google Tag Manager */}
         <Script
