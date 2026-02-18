@@ -67,19 +67,22 @@ export default function Header() {
             className="flex items-baseline font-semibold text-foreground text-2xl"
           >
             <Image
-              src="/logo.svg"
+              src={
+                dark
+                  ? "https://storage.googleapis.com/lex_assets/logo-white.svg"
+                  : "https://storage.googleapis.com/lex_assets/logo-black.svg"
+              }
               alt="Paraplex logo"
               width={40}
               height={40}
               priority
               className="
-      h-7 w-7
-      sm:h-8 sm:w-8
-      md:h-9 md:w-9
+      h-32 w-32
+      sm:h-20 sm:w-20
+      md:h-36 md:w-36
       object-contain
     "
             />
-            <p className="p-0 -m-3"> araplex.ai</p>
           </Link>
 
           <div className="flex items-center gap-6">
@@ -187,6 +190,20 @@ export default function Header() {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={() => {
+                  toggleTheme();
+                }}
+                className="flex items-center justify-between py-2 hover:text-primary transition-colors"
+              >
+                <span>{dark ? "Light mode" : "Dark mode"}</span>
+
+                {dark ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+              </button>
 
               <hr className="border-foreground/10 my-2" />
 
