@@ -159,13 +159,22 @@ export default function Header() {
             </div>
           </div>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X /> : <Menu />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <Button
+              className="text-[11px]! px-3! py-2!"
+              href="https://app.thelexbot.com/auth/signup"
+            >
+              Free Access ⭐
+            </Button>
+
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -209,7 +218,7 @@ export default function Header() {
 
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://app.thelexbot.com/login"
+                  href="https://app.thelexbot.com/auth/login"
                   className="rounded-xl text-md font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted text-center border border-foreground/10"
                 >
                   Log in

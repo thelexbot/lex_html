@@ -22,7 +22,7 @@ export default function Features() {
 
 "Paraplex understands meaning, context and intent."`}
         mediaType="video"
-        mediaSrc="/searchAnything.mp4"
+        mediaSrc="/search.mp4"
         // alignRight
         italicizeLastLine
       />
@@ -35,9 +35,8 @@ export default function Features() {
 Get structured summaries, understand judicial reasoning, trace how principles are applied.
 
 "Judgments stop being documents. They become conversations."`}
-        mediaType="image"
-        mediaSrc="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZ0ZmZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OGZ0aHl5OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlHFRbmaZtBRhXG/giphy.gif"
-        // alignRight
+        mediaType="video"
+        mediaSrc="/chat-judgement.mp4"
         italicizeLastLine
       />
 
