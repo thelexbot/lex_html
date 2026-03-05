@@ -77,7 +77,7 @@ export default function HeroClient() {
 
         <FadeUp
           delay={0.2}
-          className="w-full flex justify-center translate-y-[20vh] md:translate-y-[12vh]"
+          className="w-full flex justify-center translate-y-[20vh] lg:translate-y-[12vh]"
         >
           <div className="pointer-events-auto w-full max-w-4xl">
             <PromptCard text={currentText} />

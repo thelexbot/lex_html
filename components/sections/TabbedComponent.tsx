@@ -283,7 +283,7 @@ export default function TabbedComponent() {
 
                         <div
                           className="
-    relative h-40 md:h-80
+    relative h-40 lg:h-80
     flex items-center justify-center
     rounded-r-3xl overflow-hidden px-6 md:px-0
   "

@@ -79,14 +79,15 @@ export default function Header() {
               className="
       h-32 w-32
       sm:h-20 sm:w-20
-      md:h-36 md:w-36
+    md:h-16 md:w-16
+    lg:h-24 lg:w-24
       object-contain
     "
             />
           </Link>
 
-          <div className="flex items-center gap-6">
-            <nav className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-2 lg:gap-6">
+            <nav className="hidden md:flex items-center gap-1 lg:gap-3">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -99,7 +100,7 @@ export default function Header() {
                   }}
                   onMouseEnter={() => setHoveredNav(item.id)}
                   onMouseLeave={() => setHoveredNav(null)}
-                  className="relative px-2 py-2 text-sm font-medium transition-colors cursor-pointer"
+                  className="relative px-1 py-1 lg:px-2 lg:py-2 text-sm font-medium transition-colors cursor-pointer"
                 >
                   <span
                     className={`relative z-10 transition-colors duration-200 ${
@@ -145,13 +146,13 @@ export default function Header() {
 
               <a
                 href="https://app.thelexbot.com/auth/login"
-                className="rounded-xl text-sm md:text-base font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted"
+                className="rounded-xl text-sm lg:text-base font-semibold text-foreground transition px-4 py-2.5 hover:bg-muted"
               >
                 Log in
               </a>
 
               <Button
-                className="text-sm md:text-base"
+                className="text-sm lg:text-base"
                 href="https://app.thelexbot.com/auth/signup"
               >
                 Free Access ⭐

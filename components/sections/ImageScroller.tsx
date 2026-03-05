@@ -72,7 +72,7 @@ export default function ImageScroller({
 
   return (
     <section className="relative w-full h-full overflow-hidden py-4 md:py-16 px-4 bg-background min-h-100 md:min-h-160">
-      <div className="relative h-full md:h-100 flex items-center overflow-visible mt-20 md:mt-36">
+      <div className="relative h-full lg:h-100 flex items-center overflow-visible mt-20 md:mt-36">
         <motion.div
           className="flex gap-6 items-center"
           initial={false}
