@@ -28,7 +28,7 @@ const ContactFab = () => {
       icon: <MessageSquare size={20} />,
       bg: "bg-[#4ADE80]",
       text: "text-black",
-      href: "https://wa.me/917982092862?text=Hi%20I%20need%20more%20information%20about%20LEX",
+      href: "https://wa.me/919999191961?text=Hi%20I%20need%20more%20information%20about%20LEX",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const ContactFab = () => {
       icon: <Phone size={20} />,
       bg: "bg-[var(--color-foreground)]",
       text: "text-[var(--color-background)]",
-      href: "tel:+917982092872",
+      href: "tel:+919999191961",
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ const ContactFab = () => {
       icon: <Mail size={20} />,
       bg: "bg-[#EF4444]",
       text: "text-white",
-      href: "mailto:Prabhjot@thelexbot.com",
+      href: "mailto:support@paraplex.in",
     },
   ];
 
@@ -65,6 +65,7 @@ const ContactFab = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`${item.bg} ${item.text} flex items-center gap-2 px-4 py-2 rounded-full shadow-lg`}
+                target="_blank"
               >
                 {item.icon}
                 <span className="font-medium text-sm">{item.label}</span>

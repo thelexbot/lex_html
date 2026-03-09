@@ -1,0 +1,164 @@
+.pricingPage {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 16px;
+  background: var(--color-background);
+}
+
+.inner {
+  width: min(1100px, 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.planCard {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-foreground);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.planCardEmphasis {
+  background: var(--color-foreground);
+  color: var(--color-background);
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  .price,
+  .planName,
+  .featureItem {
+    color: var(--color-background);
+  }
+  .period,
+  .planDescription {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .featureDot {
+    background: var(--color-background);
+  }
+}
+
+.planHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.planName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.period {
+  font-size: 0.8rem;
+  color: var(--color-muted-foreground);
+}
+
+.planDescription {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.featureDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-foreground);
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+}
+
+.primaryButton,
+.secondaryButton {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: var(--radius-xl);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.primaryButton {
+  background: var(--color-primary);
+  color: #fff;
+  :global(.dark) & {
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+}
+
+.secondaryButton {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-secondary);
+}
+
+@media (max-width: 960px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+  .planCardEmphasis {
+    transform: scale(1);
+  }
+}

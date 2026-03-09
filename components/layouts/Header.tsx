@@ -6,6 +6,7 @@ import { Scale, Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const navItems = [
   { name: "Features", id: "features" },
@@ -18,6 +19,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
@@ -93,7 +95,7 @@ export default function Header() {
                   key={item.id}
                   onClick={() => {
                     if (item.id === "pricing") {
-                      window.location.href = "/pricing";
+                      router.push("/pricing");
                     } else {
                       scrollToId(item.id);
                     }

@@ -131,7 +131,7 @@ const Footer = () => {
   const handleCompanyClick = (item: string) => {
     if (item === "Contact") {
       window.open(
-        "https://wa.me/917982092862?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
+        "https://wa.me/919999191961?text=Hi%2C%20I%E2%80%99d%20like%20to%20get%20more%20information%20about%20your%20services.",
         "_blank",
       );
     }
@@ -299,7 +299,7 @@ const Footer = () => {
                     onClick={() => {
                       if (legal.isWhatsapp) {
                         window.open(
-                          "https://wa.me/917982092862?text=Hi",
+                          "https://wa.me/919999191961?text=Hi",
                           "_blank",
                         );
                       } else {
